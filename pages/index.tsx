@@ -44,7 +44,11 @@ const REVIEWS = [
 function chooseCtaVariant() {
   const params = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const fromParam = params.get("cta");
-  const variants = ["Check eligibility now", "See my options", "Find out if you qualify"];
+  const variants = [
+    "Start improving your credit today",
+    "See how to boost your credit",
+    "Begin your credit repair journey",
+  ];
   let chosen = "";
   try { chosen = localStorage.getItem("ctaVariant") || ""; } catch (_) {}
   if (fromParam && variants.includes(fromParam)) {
@@ -357,7 +361,7 @@ export default function DebtHelpLandingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
   const [step, setStep] = useState(1);
-  const [ctaText, setCtaText] = useState("Check eligibility now");
+  const [ctaText, setCtaText] = useState("Start improving your credit today");
   const [showExitCall, setShowExitCall] = useState(false);
   const formRef = useRef(null);
   const [formInView, setFormInView] = useState(false);
@@ -579,7 +583,7 @@ export default function DebtHelpLandingPage() {
               <a href="tel:+441612345678" className="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm hover:bg-teal-50" aria-label="Call Credit Cleaners">
                 <Phone className="h-4 w-4" /> 0161 234 5678
               </a>
-              <a href="#form" className="btn-cta hidden sm:inline-flex items-center gap-2" aria-label="Check eligibility now">{ctaText}</a>
+              <a href="#form" className="btn-cta hidden sm:inline-flex items-center gap-2" aria-label={ctaText}>{ctaText}</a>
             </div>
           </div>
         </header>
