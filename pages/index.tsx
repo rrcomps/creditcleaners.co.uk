@@ -466,6 +466,12 @@ export default function DebtHelpLandingPage() {
 
   return (
     <>
+      <Head>
+        <meta
+          name="description"
+          content="Keyword-rich summary of Credit Cleaners’ service"
+        />
+      </Head>
       <style>{`
         /* ==== Conversion‑optimised palette (finance/trust) ==== */
         :root { --brand-blue:#2563eb; --brand-blue-dark:#1d4ed8; }
