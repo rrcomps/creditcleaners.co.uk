@@ -471,6 +471,18 @@ export default function DebtHelpLandingPage() {
           name="description"
           content="Keyword-rich summary of Credit Cleaners’ service"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Credit Cleaners",
+              url: "https://creditcleaners.co.uk",
+              logo: "https://creditcleaners.co.uk/generated-icon.png",
+            }),
+          }}
+        />
       </Head>
       <style>{`
         /* ==== Conversion‑optimised palette (finance/trust) ==== */
