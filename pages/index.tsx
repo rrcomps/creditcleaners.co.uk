@@ -587,7 +587,7 @@ export default function DebtHelpLandingPage() {
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pt-4 md:pt-10 pb-8 grid md:grid-cols-2 gap-6 md:gap-12 items-start md:items-center">
           <motion.div className="order-2 md:order-1" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <h1 className="hidden sm:block text-3xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">
               Grow your <span className="hl">credit health</span> — fast <span className="hl">eligibility check</span>
             </h1>
             <p className="mt-4 text-slate-600 max-w-prose">
@@ -605,13 +605,6 @@ export default function DebtHelpLandingPage() {
           </motion.div>
 
           {/* Form Card */}
-          {/* Mobile title above the form */}
-          <div className="sm:hidden px-4 mb-3">
-            <h1 className="text-2xl font-bold tracking-tight">
-              Grow your <span className="hl">credit health</span> — fast <span className="hl">eligibility check</span>
-            </h1>
-          </div>
-
           <motion.div className="order-1 md:order-2" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
             <div id="form" ref={formRef} className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               {!submitted ? (
