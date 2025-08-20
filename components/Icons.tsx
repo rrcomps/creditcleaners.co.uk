@@ -1,0 +1,9 @@
+export const CheckCircle2 = (props: any) => <span {...props}>✔️</span>;
+export const ShieldCheck = (props: any) => <span {...props}>🛡️</span>;
+export const Phone = (props: any) => <span {...props}>📞</span>;
+export const ArrowRight = (props: any) => <span {...props}>➡️</span>;
+export const Info = (props: any) => <span {...props}>ℹ️</span>;
+export const AlertTriangle = (props: any) => <span {...props}>⚠️</span>;
+export const Lock = (props: any) => <span {...props}>🔒</span>;
+export const Award = (props: any) => <span {...props}>🏆</span>;
+export const Star = (props: any) => <span {...props}>⭐</span>;

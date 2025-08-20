@@ -1,0 +1,9 @@
+.chatDock { bottom: 1rem; }
+.chatFab { padding: .5rem .75rem; border-radius: 14px; font-size: .9rem; }
+.chatScroll { scroll-behavior: smooth; }
+.noScrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.noScrollbar::-webkit-scrollbar { display: none; }
+@media (max-width: 640px) {
+  .chatDock { bottom: 4.75rem; }
+  .chatFab { padding: .45rem .65rem; font-size: .9rem; }
+}
