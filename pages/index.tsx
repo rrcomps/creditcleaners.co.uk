@@ -805,15 +805,32 @@ export default function DebtHelpLandingPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               <h3 className="font-semibold">Who we are</h3>
-              <p className="mt-2 text-sm text-slate-600">We’re a UK marketing and introductions company. With your consent we refer you to a firm authorised and regulated by the <span className="hl">Financial Conduct Authority (FCA)</span> that can provide regulated debt advice.</p>
+              <ul className="mt-2 text-sm text-slate-600 list-disc pl-5 space-y-1">
+                <li>UK marketing and introductions company.</li>
+                <li>
+                  With your consent, we refer you to a firm authorised and regulated by the
+                  <span className="hl">Financial Conduct Authority (FCA)</span> that can provide regulated debt advice.
+                </li>
+              </ul>
             </div>
             <div className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               <h3 className="font-semibold">What to expect</h3>
-              <p className="mt-2 text-sm text-slate-600">A short call to understand your situation, confirm your details, and outline options such as budgeting help, Debt Management Plans, or IVAs (where appropriate). <span className="hl">No obligation.</span></p>
+              <ul className="mt-2 text-sm text-slate-600 list-disc pl-5 space-y-1">
+                <li>Short call to understand your situation.</li>
+                <li>Confirm your details.</li>
+                <li>Outline options such as budgeting help, Debt Management Plans, or IVAs (where appropriate).</li>
+              </ul>
+              <p className="mt-2 text-sm text-slate-600">
+                <span className="hl">No obligation.</span>
+              </p>
             </div>
             <div className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               <h3 className="font-semibold">Your data</h3>
-              <p className="mt-2 text-sm text-slate-600">Your information is used to handle your enquiry and referral. See our <span className="hl">Privacy Notice</span> for details. You can <span className="hl">withdraw consent</span> at any time.</p>
+              <ul className="mt-2 text-sm text-slate-600 list-disc pl-5 space-y-1">
+                <li>Your information is used to handle your enquiry and referral.</li>
+                <li>See our <span className="hl">Privacy Notice</span> for details.</li>
+                <li>You can <span className="hl">withdraw consent</span> at any time.</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -870,11 +887,17 @@ export default function DebtHelpLandingPage() {
                   <li>Some debt solutions can affect your credit rating and ability to obtain credit. Fees may apply. Your advisor will confirm details.</li>
                 </ul>
               </div>
-              <div id="privacy">
-                <p className="font-semibold">Privacy Notice (summary)</p>
-                <p className="mt-2">We process your data to respond to your enquiry and, if you consent, to introduce you to an FCA‑authorised firm. Lawful basis: consent and legitimate interests. You have rights to access, rectification, erasure, and objection. Contact: privacy@creditcleaners.co.uk.</p>
-                <p className="mt-2">© {new Date().getFullYear()} Credit Cleaners Ltd — Company No. 00000000 — Registered Office: 123 Example St, Manchester, M1 1AA.</p>
-              </div>
+                <div id="privacy">
+                  <p className="font-semibold">Privacy Notice (summary)</p>
+                  <ul className="mt-2 list-disc pl-5 space-y-1">
+                    <li>We process your data to respond to your enquiry.</li>
+                    <li>If you consent, we introduce you to an FCA‑authorised firm.</li>
+                    <li>Lawful basis: consent and legitimate interests.</li>
+                    <li>You have rights to access, rectification, erasure, and objection.</li>
+                    <li>Contact: privacy@creditcleaners.co.uk.</li>
+                  </ul>
+                  <p className="mt-2">© {new Date().getFullYear()} Credit Cleaners Ltd — Company No. 00000000 — Registered Office: 123 Example St, Manchester, M1 1AA.</p>
+                </div>
             </div>
           </div>
         </footer>
