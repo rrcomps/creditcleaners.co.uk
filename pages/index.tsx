@@ -12,6 +12,7 @@ import {
   Award,
   Star,
 } from "lucide-react";
+import CreditCheckCalculator from "../components/CreditCheckCalculator";
 
 // ================================================
 // Credit Cleaners — Lead Gen Landing (UK‑compliant)
@@ -364,6 +365,7 @@ export default function DebtHelpLandingPage() {
   const [formMode, setFormMode] = useState("two"); // 'single' | 'two'
   const [touched, setTouched] = useState({ fullName: false, email: false, phone: false, postcode: false });
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
+  const heroReview = useMemo(() => REVIEWS[Math.floor(Math.random() * REVIEWS.length)], []);
 
   const errors = useMemo(() => ({
     fullName: validateFullName(form.fullName) ? "" : "Please enter your full name",
@@ -602,6 +604,14 @@ export default function DebtHelpLandingPage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 flex items-start gap-3">
+              <div className="flex text-amber-500">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4" />
+                ))}
+              </div>
+              <p className="text-sm text-slate-600 italic">“{heroReview.text}” — {heroReview.name}, {heroReview.area}</p>
+            </div>
           </motion.div>
 
           {/* Form Card */}
@@ -816,6 +826,12 @@ export default function DebtHelpLandingPage() {
               <p className="mt-2 text-sm text-slate-600">Your information is used to handle your enquiry and referral. See our <span className="hl">Privacy Notice</span> for details. You can <span className="hl">withdraw consent</span> at any time.</p>
             </div>
           </div>
+        </section>
+
+        {/* Credit utilisation calculator */}
+        <section className="mx-auto max-w-6xl px-4 pb-10">
+          <h2 className="text-2xl font-semibold text-center mb-4">Check your credit utilisation</h2>
+          <CreditCheckCalculator />
         </section>
 
         {/* Social proof — continuous marquee */}
