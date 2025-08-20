@@ -301,9 +301,9 @@ function ChatWidget() {
     <div className="fixed right-4 z-50 chat-dock">
       {open && (
         <div className="glass-card w-80 max-w-[85vw] rounded-2xl p-4 mb-2">
-          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /><span className="text-sm font-semibold">Credit Cleaners Chat</span></div>
-            <button onClick={() => setOpen(false)} className="text-sm" aria-label="Close chat">×</button>
+            <button onClick={() => setOpen(false)} className="text-sm flex items-center justify-center min-h-[44px] min-w-[44px]" aria-label="Close chat">×</button>
           </div>
           <div ref={listRef} className="h-64 overflow-y-auto space-y-2 pr-1 chat-scroll">
             {messages.map((m, i) => (
@@ -324,12 +324,12 @@ function ChatWidget() {
           {chips.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-2">
               {chips.map((c) => (
-                <button key={c} onClick={() => clickChip(c)} className="rounded-full border px-3 py-1 text-xs hover:bg-slate-50">{c}</button>
+                <button key={c} onClick={() => clickChip(c)} className="rounded-full border px-3 py-1 text-xs hover:bg-slate-50 flex items-center justify-center min-h-[44px] min-w-[44px]">{c}</button>
               ))}
             </div>
           )}
           <form onSubmit={handleSend} className="mt-2 flex gap-2">
-            <input className="flex-1 rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Type here…" value={input} onChange={(e) => setInput(e.target.value)} />
+            <input className="flex-1 rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 min-h-[44px]" placeholder="Type here…" value={input} onChange={(e) => setInput(e.target.value)} />
             <button className="btn-cta text-sm px-3" type="submit">Send</button>
           </form>
           <p className="mt-2 text-[11px] text-slate-500">We’re an introducer (not a debt advice firm). Free help: MoneyHelper.</p>
@@ -467,6 +467,7 @@ export default function DebtHelpLandingPage() {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Keyword-rich summary of Credit Cleaners’ service"
@@ -477,10 +478,11 @@ export default function DebtHelpLandingPage() {
         :root { --brand-blue:#2563eb; --brand-blue-dark:#1d4ed8; }
         .hl { color: var(--brand-blue); font-weight: 600; }
         .hlu { color: var(--brand-blue); font-weight: 600; text-decoration: underline; }
-        .btn-cta { background: var(--brand-blue); color:#fff; border-radius: 1rem; padding: 0.75rem 1.25rem; font-weight: 600; box-shadow: 0 8px 24px rgba(37,99,235,0.25); transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease; }
+        .btn-cta { background: var(--brand-blue); color:#fff; border-radius: 1rem; padding: 0.75rem 1.25rem; font-weight: 600; box-shadow: 0 8px 24px rgba(37,99,235,0.25); transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease; display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; }
         .btn-cta:hover { background: var(--brand-blue-dark); box-shadow: 0 10px 28px rgba(37,99,235,0.32); transform: translateY(-1px); }
         .btn-cta:disabled { opacity: .6; cursor: not-allowed; }
-        .btn-ghost { border-radius: 1rem; padding: 0.6rem 1rem; border:1px solid #e2e8f0; }.chat-scroll { scroll-behavior: smooth; }
+        .btn-ghost { border-radius: 1rem; padding: 0.6rem 1rem; border:1px solid #e2e8f0; display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; }
+        .chat-scroll { scroll-behavior: smooth; }
 
 
         /* ===== Soft blue background with animated blobs (stronger but whiter) ===== */
@@ -576,7 +578,7 @@ export default function DebtHelpLandingPage() {
                 <button onClick={() => setModeAndUrl("two")} className={`px-2 py-0.5 rounded-full ${!isSingle ? "bg-slate-200" : "hover:bg-slate-100"}`}>Two‑step</button>
                 <button onClick={() => setModeAndUrl("single")} className={`px-2 py-0.5 rounded-full ${isSingle ? "bg-slate-200" : "hover:bg-slate-100"}`}>Single</button>
               </div>
-              <a href="tel:+441612345678" className="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm hover:bg-teal-50" aria-label="Call Credit Cleaners">
+              <a href="tel:+441612345678" className="inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm hover:bg-teal-50 min-h-[44px] min-w-[44px]" aria-label="Call Credit Cleaners">
                 <Phone className="h-4 w-4" /> 0161 234 5678
               </a>
               <a href="#form" className="btn-cta hidden sm:inline-flex items-center gap-2" aria-label="Check eligibility now">{ctaText}</a>
@@ -643,7 +645,7 @@ export default function DebtHelpLandingPage() {
                           <input
                             id="fullName"
                             type="text"
-                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none ${((touched.fullName || attemptedSubmit) && errors.fullName) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
+                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none min-h-[44px] ${((touched.fullName || attemptedSubmit) && errors.fullName) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
                             placeholder="Jane Doe"
                             value={form.fullName}
                             onChange={(e) => update("fullName", e.target.value)}
@@ -661,7 +663,7 @@ export default function DebtHelpLandingPage() {
                           <input
                             id="postcode"
                             type="text"
-                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none ${((touched.postcode || attemptedSubmit) && errors.postcode) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
+                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none min-h-[44px] ${((touched.postcode || attemptedSubmit) && errors.postcode) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
                             placeholder="M1 1AA"
                             value={form.postcode}
                             onChange={(e) => update("postcode", e.target.value.toUpperCase())}
@@ -680,7 +682,7 @@ export default function DebtHelpLandingPage() {
                           <input
                             id="email"
                             type="email"
-                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none ${((touched.email || attemptedSubmit) && errors.email) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
+                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none min-h-[44px] ${((touched.email || attemptedSubmit) && errors.email) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
                             placeholder="you@email.com"
                             value={form.email}
                             onChange={(e) => update("email", e.target.value)}
@@ -698,7 +700,7 @@ export default function DebtHelpLandingPage() {
                           <input
                             id="phone"
                             type="tel"
-                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none ${((touched.phone || attemptedSubmit) && errors.phone) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
+                            className={`mt-1 w-full rounded-xl border-2 px-3 py-2 focus:outline-none min-h-[44px] ${((touched.phone || attemptedSubmit) && errors.phone) ? "border-red-500 focus:ring-2 focus:ring-red-200" : "border-slate-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500"}`}
                             placeholder="07… or +44 7…"
                             value={form.phone}
                             onChange={(e) => update("phone", e.target.value)}
@@ -791,7 +793,7 @@ export default function DebtHelpLandingPage() {
                   </div>
                   <h3 className="text-2xl font-semibold">Thanks, {form.fullName.split(" ")[0] || "there"}!</h3>
                   <p className="mt-2 text-slate-600">We’ve received your details. An FCA‑authorised advisor will be in touch shortly to talk through your options.</p>
-                  <a href="https://www.moneyhelper.org.uk/en" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-teal-50">
+                  <a href="https://www.moneyhelper.org.uk/en" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-teal-50 min-h-[44px] min-w-[44px]">
                     <Info className="h-4 w-4" /> Learn about free debt help (MoneyHelper)
                   </a>
                 </div>
