@@ -1,16 +1,17 @@
 import Head from "next/head";
 import React, { useMemo, useState, useEffect, useRef } from "react";
-// Minimal icon placeholders (replacing lucide-react)
-const CheckCircle2 = (props: any) => <span {...props}>✔️</span>;
-const ShieldCheck = (props: any) => <span {...props}>🛡️</span>;
-const Phone = (props: any) => <span {...props}>📞</span>;
-const ArrowRight = (props: any) => <span {...props}>➡️</span>;
-const Info = (props: any) => <span {...props}>ℹ️</span>;
-const AlertTriangle = (props: any) => <span {...props}>⚠️</span>;
-const Lock = (props: any) => <span {...props}>🔒</span>;
-const Award = (props: any) => <span {...props}>🏆</span>;
-const Star = (props: any) => <span {...props}>⭐</span>;
-import CreditCheckCalculator from "../components/CreditCheckCalculator";
+import { motion } from "../components/motion";
+import {
+  CheckCircle2,
+  ShieldCheck,
+  Phone,
+  ArrowRight,
+  Info,
+  AlertTriangle,
+  Lock,
+  Award,
+  Star,
+} from "../components/icons";
 
 // ================================================
 // Credit Cleaners — Lead Gen Landing (UK‑compliant)
@@ -363,7 +364,6 @@ export default function DebtHelpLandingPage() {
   const [formMode, setFormMode] = useState("two"); // 'single' | 'two'
   const [touched, setTouched] = useState({ fullName: false, email: false, phone: false, postcode: false });
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
-  const heroReview = useMemo(() => REVIEWS[Math.floor(Math.random() * REVIEWS.length)], []);
 
   const errors = useMemo(() => ({
     fullName: validateFullName(form.fullName) ? "" : "Please enter your full name",
@@ -586,7 +586,7 @@ export default function DebtHelpLandingPage() {
 
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pt-4 md:pt-10 pb-8 grid md:grid-cols-2 gap-6 md:gap-12 items-start md:items-center">
-          <div className="order-2 md:order-1">
+          <motion.div className="order-2 md:order-1" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <h1 className="hidden sm:block text-3xl md:text-5xl font-bold tracking-tight">
               Grow your <span className="hl">credit health</span> — fast <span className="hl">eligibility check</span>
             </h1>
@@ -602,15 +602,7 @@ export default function DebtHelpLandingPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex items-start gap-3">
-              <div className="flex text-amber-500">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4" />
-                ))}
-              </div>
-              <p className="text-sm text-slate-600 italic">“{heroReview.text}” — {heroReview.name}, {heroReview.area}</p>
-            </div>
-          </div>
+          </motion.div>
 
           {/* Form Card */}
           {/* Mobile title above the form */}
@@ -620,7 +612,7 @@ export default function DebtHelpLandingPage() {
             </h1>
           </div>
 
-          <div className="order-1 md:order-2">
+          <motion.div className="order-1 md:order-2" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
             <div id="form" ref={formRef} className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
@@ -805,7 +797,7 @@ export default function DebtHelpLandingPage() {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Trust & Explainer */}
@@ -825,13 +817,6 @@ export default function DebtHelpLandingPage() {
             </div>
           </div>
         </section>
-
-        {/* Credit utilisation calculator */}
-        <section className="mx-auto max-w-6xl px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-center mb-4">Check your credit utilisation</h2>
-          <CreditCheckCalculator />
-        </section>
-
         {/* Social proof — continuous marquee */}
         <section className="mx-auto max-w-6xl px-4 pb-16">
           <h2 className="text-2xl font-semibold text-center">What people say</h2>
