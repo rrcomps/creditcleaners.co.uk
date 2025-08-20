@@ -469,7 +469,7 @@ export default function DebtHelpLandingPage() {
       <Head>
         <meta
           name="description"
-          content="Keyword-rich summary of Credit Cleaners’ service"
+          content="Credit Cleaners connects UK residents with FCA-authorised debt advisers who discuss solutions like Debt Management Plans and Individual Voluntary Arrangements (IVAs) to help rebuild your credit score."
         />
       </Head>
       <style>{`
@@ -591,7 +591,7 @@ export default function DebtHelpLandingPage() {
               Grow your <span className="hl">credit health</span> — fast <span className="hl">eligibility check</span>
             </h1>
             <p className="mt-4 text-slate-600 max-w-prose">
-              We’ll introduce you to an <strong className="hl">FCA‑authorised</strong> advisor who can explain your options. We’re an
+              We’ll introduce you to an <strong className="hl">FCA‑authorised</strong> advisor who can explain your options, from budgeting help to Individual Voluntary Arrangements (IVAs), and how each choice might affect your credit score. We’re an
               <strong className="hl"> advertising/introducer service</strong> – <span className="hl">not a debt advice firm</span>.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -809,7 +809,7 @@ export default function DebtHelpLandingPage() {
             </div>
             <div className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               <h3 className="font-semibold">What to expect</h3>
-              <p className="mt-2 text-sm text-slate-600">A short call to understand your situation, confirm your details, and outline options such as budgeting help, Debt Management Plans, or IVAs (where appropriate). <span className="hl">No obligation.</span></p>
+              <p className="mt-2 text-sm text-slate-600">A short call to understand your situation, confirm your details, and outline options such as budgeting help, Debt Management Plans, or Individual Voluntary Arrangements (IVAs) — formal agreements to repay part of what you owe over time. <span className="hl">No obligation.</span></p>
             </div>
             <div className="glass-card glass-morph rounded-2xl p-4 sm:p-6">
               <h3 className="font-semibold">Your data</h3>
@@ -834,6 +834,25 @@ export default function DebtHelpLandingPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="mx-auto max-w-6xl px-4 pb-16">
+          <h2 className="text-2xl font-semibold text-center">FAQs</h2>
+          <dl className="mt-6 space-y-4">
+            <div>
+              <dt className="font-semibold">What is an IVA and how does it work?</dt>
+              <dd className="mt-2 text-sm text-slate-600">An Individual Voluntary Arrangement (IVA) is a formal agreement to repay part of your unsecured debts over a set period, usually five to six years. It helps you avoid bankruptcy but will be noted on your credit report.</dd>
+            </div>
+            <div>
+              <dt className="font-semibold">Will debt solutions damage my credit score?</dt>
+              <dd className="mt-2 text-sm text-slate-600">Most debt solutions, including IVAs and Debt Management Plans, appear on your credit file and may lower your credit score short term. Managing repayments is a step toward rebuilding credit health.</dd>
+            </div>
+            <div>
+              <dt className="font-semibold">Is your introduction service free?</dt>
+              <dd className="mt-2 text-sm text-slate-600">Yes. We won’t charge you for arranging the call. If you choose a debt solution, any fees will be explained by the FCA-authorised adviser.</dd>
+            </div>
+          </dl>
         </section>
 
         {/* Exit‑intent call modal */}
